@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>FaceProof Demo</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+</head>
+<body>
+    <div class="image-container set-full-height" style="background-image:url('https://i.pinimg.com/originals/a4/ce/f6/a4cef6dc0f4e0d8d9d6a62652374adeb.jpg')">
+
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+		            <!-- Wizard container -->
+		            <div class="wizard-container">
+		                <div class="card wizard-card" data-color="blue" id="wizard">
+		                    <form action="" method="">
+
+		                    	<div class="wizard-header">
+		                        	<h3 class="wizard-title">
+		                        		FaceProof Demo
+		                        	</h3>
+									<h5>Demonstrating the capabilities of FaceProof</h5>
+		                    	</div>
+								<div class="wizard-navigation">
+									<ul>
+			                            <li><a href="#passive_liveness" data-toggle="tab" style="pointer-events: none; transform: none;">Liveness Test</a></li>
+			                        </ul>
+								</div>
+
+		                        <div class="tab-content">
+
+		                            <div class="tab-pane" id="passive_liveness">
+		                                <div class="row">
+
+											<p class="description" style="text-align: center;">Login ID: <span id="login_id">{{api_key}}</span></p>
+											<div class="webcam_container">
+												<video autoplay="true" id="webcam2" style="width: 95%;border-radius: 1rem;object-fit: cover;height: 100%;"></video>
+											</div>
+
+											<div class="col-sm-12">
+												<div id="click_img" class="choice" data-toggle="wizard-radio" rel="tooltip" title="Click Here To Caputre an Image" >
+													<input type="radio" name="job" value="Code">
+													<div class="icon" style="display: flex; justify-content: center; align-items: center;">
+														<i class="material-icons">camera</i>
+													</div>
+												</div>
+											</div>
+											
+		                                </div>
+		                            </div>
+		                        </div>
+
+								<canvas id="canvas" width="640px" height="480px" style="display: none;"></canvas>
+		                    </form>
+		                </div>
+		            </div> <!-- wizard container -->
+		        </div>
+	    	</div> <!-- row -->
+		</div> <!--  big container -->
+	</div>
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	<script  src="{{url_for('static',filename='script2.js')}}"></script>
+	<script  src="{{url_for('static',filename='webcam.js')}}"></script>
+</body>
+
+</html>
